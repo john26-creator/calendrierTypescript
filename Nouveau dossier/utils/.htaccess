@@ -1,0 +1,5 @@
+Options -Indexes
+<files properties.php>
+Order allow,deny
+Deny from all
+</files>

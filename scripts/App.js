@@ -5,7 +5,7 @@ class App {
     }
 
     loadCars = () => {
-        fetch(`controllers/FrontController.php?function=afficherVoitures`)
+        fetch(`src/controllers/FrontController.php?function=afficherVoitures`)
             .then(result =>
                 result.json())
             .then(data => {
@@ -66,7 +66,7 @@ class App {
         var data = new FormData();
         data.append("json", JSON.stringify(payload));
 
-        fetch(`controllers/FrontController.php?function=modifierVoiture`, { //Et si il est valide alors du fait une requete ajax
+        fetch(`src/controllers/FrontController.php?function=modifierVoiture`, { //Et si il est valide alors du fait une requete ajax
             method: "POST", // En post
             body: data //Avec le formulaire
         })
@@ -83,7 +83,7 @@ class App {
 
     ajouterVoiture = (event) => {
         event.preventDefault();
-        fetch(`controllers/FrontController.php?function=ajouterVoiture`, { //Et si il est valide alors du fait une requete ajax
+        fetch(`src/controllers/FrontController.php?function=ajouterVoiture`, { //Et si il est valide alors du fait une requete ajax
             method: "POST", // En post
             body: new FormData(document.querySelector('form')) //Avec le formulaire
         })
@@ -120,7 +120,7 @@ class App {
     }
 
     deleteVoiture = (idVoiture) => {
-        fetch(`controllers/FrontController.php?function=deleteVoiture&id=${idVoiture}`)
+        fetch(`src/controllers/FrontController.php?function=deleteVoiture&id=${idVoiture}`)
             .then(result => result.json())
             .then(data => {
                 if(data.status === "OK") {

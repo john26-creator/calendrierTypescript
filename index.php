@@ -1,3 +1,10 @@
+<?php
+
+use App\models\VoitureDao;
+
+require_once realpath('vendor/autoload.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,6 +34,10 @@
     </form>
     <span class="alert alert-danger" style="display:none">Une erreur est survenue</span>
     <span class="alert alert-success" style="display:none">Base de données à jour</span>
+
+    <?php
+    $voiture = new VoitureDao();
+    ?>
 </body>
 
 </html>
